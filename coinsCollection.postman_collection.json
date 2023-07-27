@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "bac4710f-c404-448d-93e0-50679b6a7b97",
+		"name": "coinsCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14037360"
+	},
+	"item": [
+		{
+			"name": "check Controller Status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb3Rhcm8iLCJleHAiOjE2OTA0MDQ2MTcsImlhdCI6MTY5MDQwMTAxN30.VuVhsAulik0URBMJANN7owEuN78OVjyML8YOtYXrZIYqRgs2AMpkMaoBnIiaQdjwzwYnH_jvCJv9Ag0HjqTDsg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/coins/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"coins",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"okayfirst\",\r\n    \"lastName\":\"okaylast\",\r\n    \"mobile\":\"9892319919\",\r\n    \"email\":\"jotar12o34@gmail.com\",\r\n    \"username\":\"jotaro1234\",\r\n    \"password\":\"Pass@1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/coins/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"coins",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb3Rhcm8xMiIsImV4cCI6MTY5MDQwODM5MCwiaWF0IjoxNjkwNDA0NzkwfQ.TTR3UtYxGy8Vv0Gt5nGxsbqCHCKpz1K_DutwKBvvJlzc8-fEym0KSIdxhC92FBG7ClpZgnOdxokAt631ckVfSQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"okayfirst\",\r\n    \"lastName\":\"okaylast123\",\r\n    \"mobile\":\"9892319919\",\r\n    \"email\":\"jotaro@gmail.com\",\r\n    \"username\":\"jotaro\",\r\n    \"password\":\"pass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/coins/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"coins",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BITCOIN URL REQUEST",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-CMC_PRO_API_KEY",
+						"value": "27ab17d1-215f-49e5-9ca4-afd48810c149",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=BTC,ETHLTC",
+					"protocol": "https",
+					"host": [
+						"pro-api",
+						"coinmarketcap",
+						"com"
+					],
+					"path": [
+						"v1",
+						"cryptocurrency",
+						"quotes",
+						"latest"
+					],
+					"query": [
+						{
+							"key": "symbol",
+							"value": "BTC,ETHLTC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost bitcoin coins",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb3Rhcm8xMjM0IiwiZXhwIjoxNjkwNDUzOTA2LCJpYXQiOjE2OTA0NTAzMDZ9.z4SstSdIgQZ3AekqaoUvBEYbltJLsPkBMMaFVeyeaLTLxz6CjeYQKgQQ2LyPHUh5YetvArTJL2SI5IaKLXI67w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-CMC_PRO_API_KEY",
+						"value": "27ab17d1-215f-49e5-9ca4-afd48810c149",
+						"type": "text"
+					},
+					{
+						"key": "userId",
+						"value": "23",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/coins?userId=9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"coins"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "9"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
